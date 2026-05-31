@@ -1,11 +1,9 @@
 """
-Raspberry Pi Pico W - One Hour Wait then Continuous LED
-Exactly what you asked for:
-1. Waits one hour
+Raspberry Pi Pico W - Duration then Continuous LED
+1. Waits duration 
 2. Turns LED ON continuously
 3. Stays ON until you stop the program
 
-Simple, no-frills version.
 """
 
 import machine
@@ -22,24 +20,24 @@ if TEST_MODE:
     WAIT_SECONDS = 10      # Test: 10 seconds
     print("⚠ TEST MODE: Waiting 10 seconds instead of 1 hour")
 else:
-    WAIT_SECONDS = WAIT_HOURS * 3600  # Real: 1 hour
+    WAIT_SECONDS = WAIT_HOURS * 3600  # Real duration
 
 def main():
-    """Main program - waits 1 hour, then LED on continuously"""
+    """Main program - waits duration, then LED on continuously"""
     
     # Setup LED
     led = machine.Pin(LED_PIN, machine.Pin.OUT)
     led.off()
     
     print("\n" + "="*50)
-    print("PICO W - 1 HOUR WAIT THEN LED")
+    print("PICO W - DURATION WAIT THEN LED")
     print("="*50)
     print(f"LED: GPIO{LED_PIN}")
     print(f"Wait: {WAIT_HOURS} hour ({WAIT_SECONDS} seconds)")
     print(f"Start: {get_time()}")
     print("="*50)
     
-    # ===== PHASE 1: WAIT ONE HOUR =====
+    # ===== PHASE 1: WAIT DURATION =====
     print(f"\n⏳ WAITING {WAIT_HOURS} HOUR...")
     print("   (Press Ctrl+C to stop early)")
     
@@ -64,7 +62,7 @@ def main():
         
         # ===== PHASE 2: LED ON CONTINUOUSLY =====
         print("\n" + "="*50)
-        print("🎯 1 HOUR COMPLETE!")
+        print("🎯 DURATION COMPLETE!")
         print("="*50)
         print("💡 TURNING LED ON CONTINUOUSLY")
         print("   LED will stay ON until you stop the program")
@@ -134,12 +132,13 @@ def ultra_simple():
     led = machine.Pin(25, machine.Pin.OUT)
     led.off()
     
-    print("Waiting 1 hour...")
+    print("Waiting ...")
     utime.sleep(3600)  # Wait 1 hour
     
-    print("1 hour complete. LED ON.")
+    print("Duration complete. LED ON.")
     led.on()
     
     # LED stays on forever
     while True:
         utime.sleep(1)
+
