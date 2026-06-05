@@ -10,6 +10,7 @@ import board
 import digitalio
 import time
 import os
+import rtc
 
 led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT
@@ -24,6 +25,14 @@ for _ in range(2):
     time.sleep(0.15)
     led.value = False
     time.sleep(0.15)
+
+# Set RTC — update before flashing: set_rtc(day, month, year, hour, minute, dst)
+def set_rtc(d, m, y, hr, mi, dst=0):
+    r = rtc.RTC()
+    # struct_time: year, month, day, hour, minute, second, weekday, yearday, dst
+    r.datetime = time.struct_time((y, m, d, hr, mi, 0, 0, -1, dst))
+
+set_rtc(6, 6, 2026, 5, 30, 0)
 
 state = "IDLE"
 start_time = 0.0
