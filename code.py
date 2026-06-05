@@ -1,5 +1,7 @@
 """
 Pico Stopwatch v5 - flush writes
+Requires boot.py with: storage.remount("/", False)
+Without it, write() calls silently fail (read-only FS).
 """
 import board
 import digitalio
