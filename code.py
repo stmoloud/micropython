@@ -1,18 +1,38 @@
 """
-Pico Stopwatch v5 - flush writes
+Pico Stopwatch v6 - Pico / Pico W LED fix
 CircuitPython (Pico / Pico W)
 
 GP15 button start/stop, writes laps to /log.txt.
 Requires boot.py with: storage.remount("/", False)
 Without it, write() calls silently fail (read-only FS).
+
+LED:
+- Pico (non-W): uses onboard LED (board.LED)
+- Pico W: onboard LED is unreliable (goes via CYW43 wifi chip),
+  so set LED_PIN to an external GPIO (e.g. GP16) and wire an LED
+  with a 330Ω resistor to ground.
 """
 import board
 import digitalio
 import time
 import os
 import rtc
+import sys
 
-led = digitalio.DigitalInOut(board.LED)
+# --- LED Setup ---
+# Change LED_PIN for your board:
+#   None          = try board.LED (works on Pico, glitchy on Pico W)
+#   board.GP16    = external LED on GP16 + 330Ω resistor to GND
+LED_PIN = None          # <-- set to board.GPxx for external LED
+
+if LED_PIN is not None:
+    led = digitalio.DigitalInOut(LED_PIN)
+else:
+    try:
+        led = digitalio.DigitalInOut(board.LED)
+    except AttributeError:
+        print("No onboard LED — set LED_PIN to a GPIO for external LED")
+        sys.exit(1)
 led.direction = digitalio.Direction.OUTPUT
 
 button = digitalio.DigitalInOut(board.GP15)
