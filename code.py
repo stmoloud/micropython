@@ -1,5 +1,8 @@
 """
 Pico Stopwatch v5 - flush writes
+CircuitPython (Pico / Pico W)
+
+GP15 button start/stop, writes laps to /log.txt.
 Requires boot.py with: storage.remount("/", False)
 Without it, write() calls silently fail (read-only FS).
 """

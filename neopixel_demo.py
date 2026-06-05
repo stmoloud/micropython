@@ -1,5 +1,6 @@
 """
-NeoPixel LED Controller for MicroPython (Raspberry Pi Pico W)
+NeoPixel LED Controller
+MicroPython (Pico / Pico W) — GPIO 1 for WS2812B data
 Improved version with better brightness control and patterns
 """
 

@@ -1,5 +1,7 @@
 """
-Raspberry Pi Pico W - Sleeping Timer Then Led
+Sleeping Timer → LED On
+MicroPython (Pico / Pico W) — onboard LED on GP25
+
 1. Waits a user defined duration
 2. Turns LED ON continuously
 3. Stays ON until user powers-off

@@ -1,9 +1,10 @@
 """
-Raspberry Pi Pico W - Duration then Continuous LED
-1. Waits duration 
+Sleeping Timer → LED On (test variant)
+MicroPython (Pico / Pico W) — onboard LED on GP25
+
+1. Waits duration
 2. Turns LED ON continuously
 3. Stays ON until you stop the program
-
 """
 
 import machine
