@@ -1,5 +1,5 @@
 """
-Sleeping Timer → LED On
+Reliable Timer → LED On
 MicroPython (Pico / Pico W) — onboard LED on GP25
 
 1. Waits a user defined duration

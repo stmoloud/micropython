@@ -1,6 +1,9 @@
 """
-Pico Stopwatch v6 - Pico / Pico W LED fix
+Pico Event Timer - Pico / Pico W LED fix
 CircuitPython (Pico / Pico W)
+
+CHANGE FILE NAME TO CODE.PY PRIOR TO UPLOADING TO
+YOUR CIRCUITPYTHON DRIVE
 
 GP15 button start/stop, writes laps to /log.txt.
 Requires boot.py with: storage.remount("/", False)
