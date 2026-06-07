@@ -7,11 +7,10 @@ Tossed together when something needed automating. Use at your own risk.
 
 | File | What it does |
 |---|---|
-| `boot.py` | CIRCUITPYTHON (Ref: Pico Stopwatch v6.md)   Required for any script that writes to flash. Mounts filesystem as writable. |
-| `code.py` | CIRCUITPYTHON (Ref: Pico Stopwatch v6.md)   Stopwatch with button (GP15), LED blink feedback, and log writes. Press to start/stop. |
-| `neopixel_demo.py` | MICROPYTHON  WS2812B LED patterns — rainbow, chase, solid colours. Configurable pin, count, brightness. |
-| `sleeping_timer_led.py` | MICROPYTHON  Waits N hours, then turns Pico LED on. Stays on until power cycle. |
-| `sleeping_timer_led_REPL.py` | MICROPYTHON  Same timer logic but with serial output. |
+| `boot.py` | CircuitPython (Ref: Pico Stopwatch v6.md)   Required for any script that writes to flash. Mounts filesystem as writable. |
+| `code.py` | CircuitPython (Ref: Pico Stopwatch v6.md)   Stopwatch with button (GP15), LED blink feedback, and log writes. Press to start/stop. |
+| `neopixel_demo.py` | MicroPython  WS2812B LED patterns — rainbow, chase, solid colours. Configurable pin, count, brightness. |
+| `sleeping_timer_led.py` | MicroPython  Waits N hours, then turns Pico LED on. Stays on until power cycle. |
 
 
 ## Notes

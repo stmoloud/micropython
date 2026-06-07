@@ -11,6 +11,10 @@ LED:
 - Pico W: onboard LED is unreliable (goes via CYW43 wifi chip),
   so set LED_PIN to an external GPIO (e.g. GP16) and wire an LED
   with a 330Ω resistor to ground.
+
+RTC:
+- If you disconnect and then reconnect log.txt date and time writes
+  will default to original values. 
 """
 import board
 import digitalio
