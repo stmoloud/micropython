@@ -1,5 +1,5 @@
 # Pico Stopwatch v6 - Pico / Pico W LED fix
-Code: CircuitPython (Pico / Pico W)
+  Circuit Python (Pico / Pico W)
 
 1. Download [Circuit Python](https://circuitpython.org/downloads)
 2. Flash to Pico / Pico W 
