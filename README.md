@@ -8,7 +8,7 @@ Tossed together when something needed automating. Use at your own risk.
 | File | What it does |
 |---|---|
 | `boot.py` | CircuitPython. Required for any script that writes to flash. Mounts filesystem as writable. |
-| `pico_event_timer.py` | CircuitPython. Stopwatch with button (GP15), LED blink feedback, and log writes. Press to start/stop. |
+| `event_timer.py` | CircuitPython. Pico stopwatch with button (GP15), LED blink feedback, and log writes. Press to start/stop. |
 | `ws2812b_demo.py` | MicroPython. WS2812B LED patterns — rainbow, chase, solid colours. Configurable pin, count, brightness. |
 | `reliable_timer_led.py` | MicroPython.  Waits N hours, then turns Pico LED on. Stays on until power cycle. |
 
